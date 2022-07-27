@@ -1,0 +1,13 @@
+<div class="layout">
+    <div [ngClass]="isExpand?'sideNav':'toggleSideNav'">
+        <app-side-nav (toggle)="onToggle($event)"></app-side-nav>
+    </div>
+    <div [ngClass]="isExpand?'content':'tcontent'">
+        <div class="layoutHeader">
+            <app-header [toggle]="isExpand"></app-header>
+        </div>
+        <div class="layoutContent">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

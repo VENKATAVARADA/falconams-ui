@@ -1,0 +1,54 @@
+<div class="contents">
+    <div [ngClass]="isExpand?'companyLogo':'toggleCompanyLogo'">
+        <img class="logo"
+            src="https://aem.dropbox.com/cms/content/dam/dropbox/www/en-us/business/app-integrations/google/google-cloud-identity/google_cloud_identity_logo_color_1x_web_512dp.png">
+        <div [ngClass]="isExpand?'menuTitle':'tmenuTitle'">
+            <span>FALCON</span>
+            <p>Policy <span *ngIf="isExpand">Management</span></p>
+        </div>
+    </div>
+    <mat-nav-list>
+        <span *ngFor="let sideMenuItem of sideMenuItems">
+            <span *ngIf="sideMenuItem.children && sideMenuItem.children.length > 0">
+                <mat-accordion >
+                    <mat-expansion-panel [hideToggle]="isExpand === false" [expanded]="isExpand && isActiveRoute(sideMenuItem.path)"
+                        (click)="isExpand === false ? onToggle():''">
+                        <mat-expansion-panel-header [routerLink]="sideMenuItem.path" [routerLinkActive]="['is-active-sub']">
+                            <mat-panel-title>
+                                <mat-icon mat-list-icon [ngStyle]="{'padding-left': isExpand ? null : '15px' }">
+                                    {{sideMenuItem.icon}}</mat-icon>
+                                <span *ngIf="isExpand" style="padding-left: 5px;">{{sideMenuItem.name}}</span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <span *ngFor="let child of sideMenuItem.children">
+                            <a [routerLink]="sideMenuItem.path+child.path" [routerLinkActive]="['is-active']">
+                                <mat-list-item class="child">
+                                    <mat-icon mat-list-icon class="submenu-item">{{child.icon}}</mat-icon>
+                                    <span *ngIf="isExpand">{{child.name}}</span>
+                                </mat-list-item>
+                            </a>
+                        </span>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </span>
+            <span *ngIf="sideMenuItem.children && sideMenuItem.children.length === 0">
+                <a [routerLink]="sideMenuItem.path" [routerLinkActive]="['is-active']">
+                    <mat-list-item class="menuItem">
+                        <mat-icon mat-list-icon>{{sideMenuItem.icon}}</mat-icon>
+                        <span *ngIf="isExpand">{{sideMenuItem.name}}</span>
+                    </mat-list-item>
+                </a>
+            </span>
+        </span>
+    </mat-nav-list>
+    <button *ngIf="isExpand" mat-raised-button color="primary" class="submissionBtn" routerLink="/addSubmission">
+        <mat-icon mat-list-icon>add</mat-icon>
+        <span>New Submission</span>
+    </button>
+    <button *ngIf="!isExpand" mat-mini-fab color="accent" class="submissionBtn">
+        <mat-icon>add</mat-icon>
+    </button>
+    <div class="menuToggle">
+        <mat-icon mat-list-icon (click)="onToggle()">{{isExpand?'chevron_left':'chevron_right'}}</mat-icon>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+.layout {
+  display: flex;
+}
+
+.sideNav {
+  width: 230px;
+  z-index: 2;
+}
+
+.content {
+  width: calc(100% - 230px);
+  padding: 0;
+}
+
+.toggleSideNav {
+  width: 120px;
+  z-index: 2;
+}
+
+.tcontent {
+  width: calc(100% - 120px);
+  padding: 0;
+}
+
+.layoutContent {
+  padding: 75px 10px 10px 0px;
+  background-color: #f2f3f8;
+  position: fixed;
+  max-height: calc(100% - 110px);
+  // height: 100%;
+  overflow-y: scroll;
+}
+
+.layoutHeader {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}

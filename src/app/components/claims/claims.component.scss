@@ -1,0 +1,20 @@
+.search-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .mat-form-field {
+    width: 13%;
+  }
+}
+.mat-form-field-wrapper {
+  width: 20%;
+}
+
+.claims-table {
+  margin-top: 20px;
+  .mat-card-title {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

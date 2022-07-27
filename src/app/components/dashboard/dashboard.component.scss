@@ -1,0 +1,169 @@
+.cashCard,
+.cashCardContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dashboardCard {
+  border-radius: 10px;
+  height: 7rem;
+}
+
+.cashCardRow {
+  // padding: 8px 32px;
+}
+
+.cashCardRow h4 {
+  font-size: xx-large;
+  color: #58a6df;
+  font-weight: 600;
+}
+
+.cashCardRow h3,
+span {
+  font-weight: 500;
+}
+
+.cashCardIcon {
+  padding: 16px;
+  background: #003e6b;
+  border-radius: 10px;
+  color: white;
+  height: 60%;
+}
+
+.historyCard {
+  margin: 20px 0px;
+  border-radius: 10px;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  height: 60%;
+}
+
+.searchTerm {
+  border: 1px solid #c2cacc;
+  border-right: none;
+  padding: 5px;
+  outline: none;
+  color: #9dbfaf;
+  font-size: 14px;
+}
+
+.searchTerm:focus {
+  color: #c2cacc;
+}
+
+.searchButton {
+  border: 1px solid #c2cacc;
+  text-align: center;
+  color: #c2cacc;
+  cursor: pointer;
+  border-left: none;
+  background-color: #ffffff;
+  padding-top: 5px;
+}
+
+.dropMenu {
+  width: 60px;
+}
+
+.searchHistory {
+  display: flex;
+}
+
+.mat-card-content > :last-child:not(.mat-card-footer) {
+  margin-bottom: 0;
+  margin: 0px 5px;
+}
+
+.card,
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.preCard {
+  border-radius: 10px;
+  border: 1px solid #e8eaec;
+  height: 7rem !important;
+}
+
+.cardRow {
+  padding: 4px 9px;
+}
+
+.cardRow .head {
+  color: #003e6b;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.statusBtn1 {
+  color: #f5ab1b;
+  padding: 5px;
+  border-radius: 5px;
+  background: #fef1d7;
+  font-size: 12px;
+}
+
+.statusBtn2 {
+  color: #1a9e3f;
+  padding: 5px;
+  border-radius: 5px;
+  background: #cfead7;
+  font-size: 12px;
+}
+
+.statusBtn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cardDate p {
+  color: #999999;
+  font-style: italic;
+}
+
+.recentCard {
+  margin: 20px 0px;
+  border-radius: 10px;
+}
+
+.mat-card {
+  padding: 12px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gridItem {
+  padding: 1rem;
+}
+
+.grid {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

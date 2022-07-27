@@ -1,0 +1,91 @@
+<div class="mainContent">
+    <h2>Dashboard</h2>
+
+    <div class="cashCard grid">
+        <mat-card class="dashboardCard gridItem" *ngFor="let card of cards">
+            <mat-card-content class="cashCardContent">
+                <div class="cashCardRow">
+                    <h3>BATCH 1</h3>
+                    <p>Last updated at <span>june 4</span></p>
+                    <h4>13</h4>
+                </div>
+                <div class="cashCardRow cashCardIcon">
+                    <mat-icon>attach_money</mat-icon>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <mat-card class="historyCard">
+        <div>
+        </div>
+        <div class="searchHistory">
+            <h2>Submission History</h2>
+            <span class="spacer"></span>
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Search here">
+                <button type="submit" class="searchButton">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </div>
+        </div>
+        <mat-progress-bar mode="query" color="#000" *ngIf="isLoading"></mat-progress-bar>
+        <app-data-table [config]="config" [data]="submissions"></app-data-table>
+    </mat-card>
+
+    <mat-card class="recentCard ">
+        <div class="title">
+            <h2>Recents</h2>
+            <h2>SHOW MORE>></h2>
+        </div>
+        <div class="card grid">
+            <mat-card class="preCard gridItem" *ngFor="let cardContentItem of recentPolicies">
+                <div class="row">
+                    <div class="col-8">
+                        {{cardContentItem.type}}
+                        <div class="row">
+                            <div class="col">
+                                Policy No:
+                            </div>
+                            <div class="col">
+                                {{cardContentItem.policyNo}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                Product:
+                            </div>
+                            <div class="col">
+                                {{cardContentItem.product}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col statusBtn1">{{cardContentItem.policyStatus}}</div>
+                            <div class="col statusBtn2">{{cardContentItem.currentStatus}}</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <p>{{cardContentItem.policyDate|date}}</p>
+                    </div>
+                </div>
+               
+                <!-- <mat-card-content class="cardContent">
+                    <div class="cardRow cardItem">
+                        <span class="head">{{cardContentItem.type}}</span>
+                        <span>Policy No: {{cardContentItem.policyNo}}</span>
+                        <span>Product: {{cardContentItem.product}}</span>
+                        <div class="statusBtn">
+                            <div class="statusBtn1">{{cardContentItem.policyStatus}}</div>
+                            <div class="statusBtn2">{{cardContentItem.currentStatus}}</div>
+                        </div>
+                    </div>
+                    <div class="cardRow cardDate">
+                        <p>{{cardContentItem.policyDate|date}}</p>
+                    </div>
+
+                </mat-card-content> -->
+            </mat-card>
+        </div>
+    </mat-card>
+
+</div>

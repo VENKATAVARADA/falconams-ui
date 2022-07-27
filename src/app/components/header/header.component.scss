@@ -1,0 +1,99 @@
+.profile {
+  background-color: #f2f4f8;
+  color: #003e6b;
+}
+
+.header {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 10px 7px -6px rgba(217, 217, 217, 1);
+  -moz-box-shadow: 0px 10px 7px -6px rgba(217, 217, 217, 1);
+  box-shadow: 0px 10px 7px -6px rgba(217, 217, 217, 1);
+  width: 100%;
+}
+
+.greeting {
+  font-size: 14px;
+  margin: 0;
+}
+
+.userName {
+  font-size: 16px;
+  margin: 0;
+  line-height: 10px;
+}
+
+.profileName {
+  padding: 10px;
+}
+
+.vline {
+  border-left: 2px solid #e8eaec;
+  height: 80%;
+  margin: 15px;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  height: 60%;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 1px solid #c2cacc;
+  border-right: none;
+  padding: 15px;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+  color: #9dbfaf;
+  font-size: 14px;
+}
+
+.searchTerm:focus {
+  color: #c2cacc;
+}
+
+.searchButton {
+  border: 1px solid #c2cacc;
+  text-align: center;
+  color: #c2cacc;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  border-left: none;
+  background-color: #ffffff;
+  padding-top: 5px;
+}
+
+.menuItem {
+  display: flex;
+  line-height: 20px;
+  justify-content: center;
+}
+
+.headerMenu {
+  padding: 12px 20px;
+}
+
+.headerMenu .text {
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.menuIcon {
+  color: #003e6b;
+  line-height: 15px;
+}
+
+.profileMenu {
+  padding: 10px;
+}
+
+.is-active {
+  background: #003e6b;
+  color: #fff;
+}
+
+.is-active .mat-icon {
+  background: #003e6b;
+  color: #fff;
+}

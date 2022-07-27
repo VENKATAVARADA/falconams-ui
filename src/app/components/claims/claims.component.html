@@ -1,0 +1,25 @@
+<div class="mainContent">
+    <h2>Claims</h2>
+</div>
+
+<mat-card class="claims-table">
+    <mat-card-title><h4>Claims</h4>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>file_download</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>PDF</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Excel</span>
+            </button>
+        </mat-menu>
+    </mat-card-title>
+    <mat-card-content>
+        <mat-progress-bar mode="query" *ngIf="isLoading"></mat-progress-bar>
+        <app-data-table [config]="claimsConfig" [data]="claims"></app-data-table>
+    </mat-card-content>
+</mat-card>

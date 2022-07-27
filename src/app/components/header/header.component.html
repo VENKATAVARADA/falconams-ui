@@ -1,0 +1,45 @@
+<mat-toolbar class="header">
+    <mat-toolbar-row>
+        <span class="spacer"></span>
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="Search here">
+            <button type="submit" class="searchButton">
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+
+        <div class="vline">
+
+        </div>
+        <div *ngFor="let menuItem of menus" class="headerMenu" [routerLink]="menuItem.path" [routerLinkActive]="['is-active']">
+            <button mat-icon-button class="menuItem" disableRipple="true" >
+                <mat-icon class="menuIcon">{{menuItem.icon}}</mat-icon>
+                <p class="text">{{menuItem.name}} </p>
+            </button>
+        </div>
+        <div class="vline">
+        </div>
+        <div class="profileMenu">
+            <button mat-icon-button class="profile">
+                <mat-icon>notifications</mat-icon>
+            </button>
+        </div>
+        <div class="profileMenu">
+            <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" class="profile">
+                <mat-icon>person</mat-icon>
+            </button>
+        </div>
+        <div class="profileName">
+            <p class="greeting">Hello,</p>
+            <p class="userName">John smith</p>
+        </div>
+        <mat-menu #menu="matMenu">
+            <span (mouseleave)="menuTrigger.closeMenu()">
+                <a mat-menu-item *ngFor="let menuItem of menus" [routerLink]="'/admin'">
+                    <mat-icon>{{menuItem.icon}}</mat-icon>
+                    <span>{{menuItem.name|titlecase }}</span>
+                </a>
+            </span>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>
