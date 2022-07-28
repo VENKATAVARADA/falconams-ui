@@ -10,10 +10,10 @@ const express = require('express');
 const app = express();
 
 app.use(requireHTTPS);
-app.use(express.static('./dist/falconcms-ui'));
+app.use(express.static('./dist/falconams-ui'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/falconcms-ui/'}),
+    res.sendFile('index.html', {root: 'dist/falconams-ui/'}),
 );
 
 app.listen(process.env.PORT || 8080);
